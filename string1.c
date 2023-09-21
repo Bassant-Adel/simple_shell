@@ -52,21 +52,21 @@ int chcudir(info_t *info)
 
 	if (!info->argv[1])
 	{
-		doo = getenv(info, "HOME=");
+		doo = geetenv(info, "HOME=");
 		if (!doo)
-			rechdr = chdir((doo = getenv(info, "PWD=")) ? doo : "/");
+			rechdr = chdir((doo = geetenv(info, "PWD=")) ? doo : "/");
 		else
 			rechdr = chdir(doo);
 	}
 	else if (comstr(info->argv[1], "-") == 0)
 	{
-		if (!getenv(info, "OLDPWD="))
+		if (!geetenv(info, "OLDPWD="))
 		{
 			pristr(x);
 			prichar('\n');
 			return (1);
-		}		pristr(getenv(info, "OLDPWD=")), prichar('\n');
-		rechdr = chdir((doo = getenv(info, "OLDPWD=")) ? doo : "/");
+		}		pristr(geetenv(info, "OLDPWD=")), prichar('\n');
+		rechdr = chdir((doo = geetenv(info, "OLDPWD=")) ? doo : "/");
 	}
 	else
 		rechdr = chdir(info->argv[1]);
@@ -77,7 +77,7 @@ int chcudir(info_t *info)
 	}
 	else
 	{
-		envinit(info, "OLDPWD", getenv(info, "PWD="));
+		envinit(info, "OLDPWD", geetenv(info, "PWD="));
 		envinit(info, "PWD", getcwd(buffs, 1024));
 
 	}	return (0);

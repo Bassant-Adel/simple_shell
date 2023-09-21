@@ -42,8 +42,10 @@
 #define NOT_FOUND 127
 
 #define PERMISSION_DENIED 126
+
 extern char **environ;
 
+extern char *getenv(const char *name);
 
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
@@ -196,7 +198,7 @@ char *copsr(char *dest, char *src, int n);
 char *coptsr(char *dest, char *src, int n);
 ssize_t retnode(list_t *head, list_t *node);
 char *dupch(char *pst, int start, int stop);
-char *getenv(info_t *info, const char *name);
+char *geetenv(info_t *info, const char *name);
 char *conmem(char *s, char b, unsigned int n);
 int remnode(list_t **head, unsigned int index);
 void sigan(__attribute__((unused))int sig_num);

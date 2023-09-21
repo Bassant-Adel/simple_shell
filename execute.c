@@ -106,7 +106,7 @@ void findcomm(info_t *info)
 	if (!z)
 		return;
 
-	path = strpath(info, getenv(info, "PATH="), info->argv[0]);
+	path = strpath(info, geetenv(info, "PATH="), info->argv[0]);
 
 	if (path)
 	{
@@ -115,7 +115,7 @@ void findcomm(info_t *info)
 	}
 	else
 	{
-		if ((active(info) || getenv(info, "PATH=")
+		if ((active(info) || geetenv(info, "PATH=")
 					|| info->argv[0][0] == '/') && execomd(info, info->argv[0]))
 			forkcomm(info);
 

@@ -66,7 +66,7 @@ int alias_set(info_t *info, char *str)
 
 	}	alias_unset(info, str);
 
-	return (addendnode(&(info->alias), str, 0) == NULL);
+	return (addnodend(&(info->alias), str, 0) == NULL);
 }
 
 /**

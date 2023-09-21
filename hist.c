@@ -10,7 +10,7 @@ char *gethisf(info_t *info)
 {
 	char *buf, *doo;
 
-	doo = getenv(info, "HOME=");
+	doo = geetenv(info, "HOME=");
 
 	if (!doo)
 	{

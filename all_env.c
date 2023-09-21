@@ -20,13 +20,13 @@ int prienv(info_t *info)
 }
 
 /**
- * getenv -> A function to get value of environ
+ * geetenv -> A function to get value of environ
  *@info: It's an argument used to keep up
  *@name: It's a name
  *Return: The Value (NULL)
  */
 
-char *getenv(info_t *info, const char *name)
+char *geetenv(info_t *info, const char *name)
 {
 	list_t *anode = info->env;
 	char *e;

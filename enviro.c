@@ -67,7 +67,7 @@ int envinit(info_t *info, char *var, char *value)
 	{
 		return (0);
 
-	}	buff = malloc(lenstr(var) + lenstr(value) + 2);
+	}	buf = malloc(lenstr(var) + lenstr(value) + 2);
 
 	if (!buf)
 	{
